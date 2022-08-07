@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<div class = 'error404'>
+    
+    
+    <img class ='error404img' src="{{ url_for('static', filename = 'error-404(1).png') }}" alt="">
+
+
+</div>
+    <br>
+
+    <h1 class="P404text" > Error Page :(! </h1>
+    <br>
+    <h1 class="P404text" > {{ error }} </h1>
+
+{% endblock %}

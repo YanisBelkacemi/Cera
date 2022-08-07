@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+        
+    
+
+
+
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+           
+            <style>
+                #map_77d4d1324fd49541e6b4ac4085dbca2c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 10%;
+                    color: black;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_77d4d1324fd49541e6b4ac4085dbca2c" ></div>
+        
+</body>
+<script>    
+    
+            var map_77d4d1324fd49541e6b4ac4085dbca2c = L.map(
+                "map_77d4d1324fd49541e6b4ac4085dbca2c",
+                {
+                    center: [28.0000272, 2.9999825],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 9,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aa366a457103e90f8064956d0fb39a14 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_77d4d1324fd49541e6b4ac4085dbca2c);
+        
+    
+            var marker_8439320d07909b1250e7990bda847a9a = L.marker(
+                [form.len.data, form.lng.data],
+                {}
+            ).addTo(map_77d4d1324fd49541e6b4ac4085dbca2c);
+        
+    
+        var popup_d4e93f27339a369226556c4288226f65 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ce26c5df6fa7333397aca93133209ea0 = $(`<div id="html_ce26c5df6fa7333397aca93133209ea0" style="width: 100.0%; height: 100.0%;">Algeria</div>`)[0];
+            popup_d4e93f27339a369226556c4288226f65.setContent(html_ce26c5df6fa7333397aca93133209ea0);
+        
+
+       
+
+        
+    
+</script>
+
+{% endblock %}

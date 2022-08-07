@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <a href="{{ url_for('map') }}">
+        
+        <button class ='map' > 
+
+                Map
+
+        </button>
+
+        
+    </a>
+        <br>
+    {% if current_user.id == 1 or current_user.id == 0 %}
+    <a href="{{ url_for('admin')}}">
+        <button class ='admin' > 
+
+            Admin
+
+        </button>
+    </a>
+        
+    {% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='style.css') }}">
+    <title>Nera</title>
+</head>
+    {% if current_user.is_authenticated %}
+    <nav class="header" >
+        <a href="{{ url_for('home') }}"> <img class ="home"src="{{ url_for('static' , filename='home(3).png') }}" alt=""> </a>
+        <a class="Logo" href="#" >Cera</a>
+        <a href="{{ url_for('account', id = current_user.id, name = current_user.username) }}"> <img class="profile" src="{{ url_for('static' , filename='profile.png') }}" alt=""> </a>
+    </nav>
+
+    {% else %}
+    <nav class="header" >
+        <a href="{{ url_for('home') }}"> <img class ="home"src="{{ url_for('static' , filename='home(3).png') }}" alt=""> </a>
+        <a class="Logo" href="#" >Cera</a>
+        <a  href="{{ url_for('Register') }}"> <img class="profile" src="{{ url_for('static' , filename='profile.png') }}" alt=""> </a>
+    </nav>
+    
+    {% endif %}
+    
+    <nav class ='bottom'>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('chat') }}"> <img class ="chat"src="{{ url_for('static' , filename='messenger.png') }}" alt=""> </a>
+            <a href="{{ url_for('more') }}"><img class = "more" src="{{ url_for('static', filename = 'plus.png') }}" alt=""></a>
+            <a  href="{{ url_for('logout') }}"> <img class="logout" src="{{ url_for('static' , filename='logout(1).png') }}" alt=""> </a>
+    
+        {% else %}
+        <a href="{{ url_for('chat') }}"> <img class ="chat" src="{{ url_for('static' , filename='messenger.png') }}" alt=""> </a>
+        
+        <a  href="{{ url_for('loginpage') }}"> <img class="logout" src="{{ url_for('static' , filename='password.png') }}" alt=""> </a>
+        {% endif %}
+        </nav>
+        
+        
+
+
+
+
+    </nav>
+    {% block content %}
+
+
+    {% endblock %}

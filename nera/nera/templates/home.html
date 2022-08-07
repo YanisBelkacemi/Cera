@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="Danger">
+          
+            {{ message }}
+
+
+        <div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+    <div class ='input'>
+    <form method="POST" class = "form">
+            {{ form.hidden_tag() }}
+            {{ form.text(placeholder = 'want say something?', class='input' , rows = "1") }}
+            {{ form.csrf_token }}
+            {{ form.doit(placeholder ="Post", class='postbtn') }}
+        </form> 
+    </div>
+
+
+
+     <section class="section" >
+        {% for data in datas.items  %}
+        
+        <div class="main" >
+            <h2>{{ data.author }}</h2>
+        </div>
+        <div class="mainpost" >
+            <br>
+            <h5>  {{ data.text }}</h5>
+
+        </div>
+     
+        <div  class ='time'>
+                <h6 class="timetxt">Posted at : {{ data.formatdate() }}</h6>
+        </div>
+        <br>
+        
+        {% endfor %}
+        
+        <div class = "paginatdiv">
+        {% for page_num in datas.iter_pages(left_edge=0,right_edge=0,left_current=1, right_current=2) %}
+            {% if page_num %}
+                {%if datas.page == page_num %}
+
+                <a class="paginath"  href="{{ url_for('home', page = page_num) }}">{{ page_num }}</a>
+
+
+                {% else %}
+
+
+                <a class="paginat"  href="{{ url_for('home', page = page_num) }}">{{ page_num }}</a>
+
+
+                {% endif %}
+
+
+            {% else %}
+
+            {% endif %}
+    
+    
+        {% endfor %}
+    </div>
+     </section>
+    
+        
+{% endblock %}

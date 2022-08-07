@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1 class = "h1" >Login Page</h1>
+
+
+<form method="POST" class = 'inpuform' >
+    <div class="form_register">
+    {{ form.username(placeholder = "Username") }}
+    </div>
+    <br>
+    <div class="form_register">
+    {{ form.password(placeholder = 'password') }}
+    </div>
+    <br>
+    
+    <div class="btn">
+    {{ form.csrf_token }}
+    {{ form.submit(placeholder = 'Register', class="regi") }}
+    </div>
+
+</form>
+
+<a href="{{ url_for('Register') }}" class="login_redirect"> You dont have an account? </a>
+{% endblock %}

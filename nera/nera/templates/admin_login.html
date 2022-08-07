@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<style>
+
+    table, th, td {
+
+      border:2px solid rgb(255, 255, 255) ;
+      border-collapse: collapse;
+      color: aliceblue;
+
+    }
+    </style>
+
+<div style="text-align: center; margin-left: 30px ;" >
+<h1 class = "h1" >Admin Page</h1>
+<h1 style="color: white; font-weight: 500;">Users :</h1>
+<table style="width: 90%;">
+    
+   <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>password</td>
+        <td>Email</td>
+        <td>ip adresse</td>
+   </tr>
+   {% for user in users %}
+   <tr>
+    <td>{{user.id}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.Email}}</td>
+    <td>{{user.ip}}</td>
+   </tr>
+    {% endfor %}
+</table>
+<br>
+<h1 style="color: white; font-weight: 500;">Posts :</h1>
+<table style="width: 90%; " >
+    <tr>
+        <td>id</td>
+        
+        <td>author</td>
+        <td>date</td>
+        
+   </tr>
+   {% for post in posts %}
+   <tr>
+    <td>{{post.id}}</td>
+
+    <td>{{post.author}}</td>
+    <td>{{post.date}}</td>
+
+   </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+{% endblock %}

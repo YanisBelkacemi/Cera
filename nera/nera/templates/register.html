@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="Danger">
+          
+            {{ message }}
+
+
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    
+    <h1 class = "h1" >Register Page</h1>
+
+
+    <form method="POST" class = 'inpuform' >
+        <div class="form_register">
+        {{ form.firstname(placeholder = "firstname") }}
+        </div>
+        <br>
+        <div class="form_register">
+            {{ form.familyname(placeholder = "familly name") }}
+        </div>
+        <br>
+        <div class="form_register">
+        {{ form.password(placeholder = 'password') }}
+        </div>
+        <br>
+        <div class="form_register">
+        {{ form.Email(placeholder= "Email") }}
+        </div>
+        <br>
+        
+    <div class="btn">
+        {{ form.csrf_token }}
+        {{ form.register(placeholder = 'Register' , class ='regi') }}
+    </div>
+
+    </form>
+
+</div>
+<a href="{{ url_for('loginpage') }}" class="login_redirect"> You have an account? </a>
+{% endblock %}
